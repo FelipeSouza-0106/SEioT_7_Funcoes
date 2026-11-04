@@ -1,0 +1,8 @@
+[wokwi]
+version = 1
+firmware = '.pio/build/esp32dev/firmware.bin'
+elf = '.pio/build/esp32dev/firmware.elf'
+
+# Encaminha a serial do simulador para a porta 4000.
+# Assim o Serial Monitor do PlatformIO (ícone da tomada) conversa com o Wokwi.
+rfc2217ServerPort = 4000

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Prof. Alex - Sistemas Embarcados e IoT",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -105.3, "left": -159, "attrs": { "temperature": "31.5", "humidity": "70" } },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -118.4, "left": 197.6, "attrs": { "pins": "i2c" } },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 200, "left": -150, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [] ],
+    [ "dht1:SDA", "esp:15", "green", [] ],
+    [ "lcd1:VCC", "esp:5V", "red", [] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [] ],
+    [ "lcd1:SDA", "esp:21", "blue", [] ],
+    [ "lcd1:SCL", "esp:22", "orange", [] ],
+    [ "pot1:VCC", "esp:3V3", "red", [] ],
+    [ "pot1:GND", "esp:GND.1", "black", [] ],
+    [ "pot1:SIG", "esp:34", "violet", [] ]
+  ],
+  "dependencies": {}
+}
